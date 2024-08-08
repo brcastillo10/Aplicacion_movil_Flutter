@@ -60,6 +60,11 @@ flutter:
   assets:
     - asset/GokuIcon.jpg
     - asset/login.jpg
+    - asset/Monitor.jpeg
+    - asset/procesador.jpeg
+    - asset/TarjetaGrafica.png
+    - asset/teclado.png
+    - asset/Logo.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

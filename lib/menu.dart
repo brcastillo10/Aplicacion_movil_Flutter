@@ -5,7 +5,9 @@ import 'orden_trabajo.dart';
 import 'encuesta_form.dart';
 import 'localizacion.dart';
 import 'login_format.dart';
-
+import 'productos.dart';
+import 'inicio.dart';
+import 'clientes_view.dart';
 class MenuFormPage extends StatelessWidget {
   final Widget body;
   final String title;
@@ -73,6 +75,20 @@ class MenuFormPage extends StatelessWidget {
               },
             ),
             ListTile(
+              leading: Icon(Icons.app_registration, color: Colors.black),
+              title: Text('Clientes Registados'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MenuFormPage(
+                    body: ClientesView(), 
+                    title: 'Clientes',
+                  )),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.work, color: Colors.black),
               title: Text('Orden de trabajo'),
               onTap: () {
@@ -111,6 +127,20 @@ class MenuFormPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MenuFormPage(
                     body: MapSample(), 
                     title: 'Localización',
+                  ))
+                );
+              },
+            ),
+              ListTile(
+              leading: Icon(Icons.production_quantity_limits_sharp, color: Colors.black),
+              title: Text('Productos'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MenuFormPage(
+                    body: ProductScreen(), 
+                    title: 'Productos',
                   ))
                 );
               },

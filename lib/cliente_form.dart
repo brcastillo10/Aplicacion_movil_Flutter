@@ -26,13 +26,17 @@ class _ClienteFormState extends State<ClienteForm> {
 
   void _addCliente() async {
     if (_formkey.currentState!.validate()) {
-      Map<String, dynamic> client = {
+      print("Validando formulario...");
+      Map<String, dynamic> cliente = {
         'apellido': _apellidoController.text,
         'nombre': _nombreController.text,
         'correo': _correoController.text,
         'telefono': _telefonoController.text,
+        'sexo': _sexo,
+        'estadoCivil': _estadoCivil,
       };
-      await _databaseCuarto.insertCliente(client);
+      await _databaseCuarto.insertCliente(cliente);
+      print("Cliente agregado a la base de datos");
       Navigator.pop(context, true);
     }
   }
@@ -139,8 +143,7 @@ class _ClienteFormState extends State<ClienteForm> {
                 items: <String>[
                   'Soltero',
                   'Casado',
-                  'Divorcioado',
-                  'Richard',
+                  'Divorciado',
                   'Viudo',
                   'En proceso de amorio',
                   'Amante',
